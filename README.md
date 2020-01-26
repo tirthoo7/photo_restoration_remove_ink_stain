@@ -1,4 +1,5 @@
 # photo_restoration_remove_ink_strain
+This application can remove ink stain from the input image and return the clean output image
 
 <>Working:-
 
