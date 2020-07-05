@@ -22,6 +22,7 @@ cv2.waitKey(0)
 # that are not white, to black
 ret, thresh1 = cv2.threshold(marked_damages, 254, 255, cv2.THRESH_BINARY)
 cv2.imshow('Threshold Binary', thresh1)
+cv2.imwrite("thresh1.png", thresh1)
 cv2.waitKey(0)
 
 # Let's dilate (make thicker) our the marks w made
@@ -29,7 +30,7 @@ cv2.waitKey(0)
 kernel = np.ones((7,7), np.uint8)
 mask = cv2.dilate(thresh1, kernel, iterations = 1)
 cv2.imshow('Dilated Mask', mask)
-# cv2.imwrite("mask.png", mask)
+cv2.imwrite("mask.png", mask)
 
 cv2.waitKey(0)
 restored = cv2.inpaint(image, mask, 5, cv2.INPAINT_TELEA)
